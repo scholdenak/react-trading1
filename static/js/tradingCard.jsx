@@ -73,10 +73,21 @@ function TradingCard(props) {
 }
 
 function TradingCardContainer() {
+  const tradingCards = [];
+
+  for (const currentCard of tradingCardData) {
+    tradingCards.push(
+    <TradingCard
+      name={currentCard.name}
+      skill={currentCard.skill}
+      imgUrl={currentCard.imgUrl}
+    />
+    );
+  }
   return (
-    <div>
-      success!
-    </div>
+    <React.Fragment>
+      {tradingCards}
+    </React.Fragment>
   );
 }
 
@@ -84,9 +95,7 @@ ReactDOM.render(
   <TradingCardContainer />, document.querySelector('#container')
 );
 
-// for (const currentCard of tradingCardData) {
-//   (currentCard.name, currentCard.skill);
-// }
+
 // ReactDOM.render(
 //   (
 //     <TradingCard
